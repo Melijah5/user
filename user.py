@@ -6,11 +6,16 @@ class user:
     def make_deposit(self, amount):
         self.account_balance += amount
     def make_withdrow(self, amount):
-        self.account_balance -= amount
+        if self.account_balance>=amount:
+           self.account_balance-=amount
+        else:
+            print("\nsorry, Insufficient balance  ")
     def display_user_balance(self):
         print("hello",self.name, "your net Available Balance is", self.account_balance)
-    def transfer_money(self, amount):
-        self.account_balance -= amount
+    def transfer_money(self, from_account, to_account , amount):
+        from_account.make_withdrow(amount)
+        to_account.make_deposit(amount)
+    
 elias = user ("Elias W" , "elias.woldeselassie@gmail.com")
 jone = user ("jone dan" , "jone_dan@gmail.com")
 jappy = user ("jappy assfa" , "jappy_a@gmail.com")
@@ -18,7 +23,7 @@ jappy = user ("jappy assfa" , "jappy_a@gmail.com")
 elias.make_deposit(200)
 elias.make_deposit(400)
 elias.make_deposit(300)
-elias.make_withdrow(150)
+elias.make_withdrow(1050)
 elias.display_user_balance()
 
 jone.make_deposit(2000)
@@ -31,4 +36,8 @@ jappy.make_deposit(4000)
 jappy.make_withdrow(300)
 jappy.make_withdrow(400)
 jappy.make_withdrow(600)
+jappy.display_user_balance()
+
+elias.transfer_money(elias, jappy, 200)
+elias.display_user_balance()
 jappy.display_user_balance()
