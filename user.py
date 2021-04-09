@@ -17,7 +17,7 @@ class user:
         to_account.make_deposit(amount)
     
 elias = user ("Elias W" , "elias.woldeselassie@gmail.com")
-jone = user ("jone dan" , "jone_dan@gmail.com")
+jone = user ("jone dana" , "jone_dan@gmail.com")
 jappy = user ("jappy assfa" , "jappy_a@gmail.com")
 
 elias.make_deposit(200)
