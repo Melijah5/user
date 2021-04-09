@@ -1,4 +1,8 @@
 class user:
+    
+    
+    # methods
+    
     def __init__(self, username,email_address):
         self.name = username
         self.email = email_address
@@ -15,7 +19,7 @@ class user:
     def transfer_money(self, from_account, to_account , amount):
         from_account.make_withdrow(amount)
         to_account.make_deposit(amount)
-    
+    # instance
 elias = user ("Elias W" , "elias.woldeselassie@gmail.com")
 jone = user ("jone dana" , "jone_dan@gmail.com")
 jappy = user ("jappy assfa" , "jappy_a@gmail.com")
